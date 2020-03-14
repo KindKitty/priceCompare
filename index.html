@@ -29,12 +29,6 @@
 				e.preventDefault();
 			});
 
-			function clickMe() {
-				$('a').each(function () {
-					window.open($(this).attr('href'));
-				});
-			}
-
 			function getStoreList(query) {
 				query = encodeURI(query);
 				return '' +
@@ -56,6 +50,8 @@
 					'<div class="panel-body">' + getStoreList(query) + '</div>' +
 					'</div>');
 				$(".well").first().hide().slideDown(70);
+				// empty out the search field
+				$("#searchText").val('');
 			});
 
 		});
@@ -68,7 +64,6 @@
         <![endif]-->
 
 	<script src="" async defer></script>
-	<br><br>
 
 	<div class="container-fluid">
 		<h2>priceCompare</h2>
@@ -88,7 +83,7 @@
 		<div class="col-md-6">
 
 			<div id="results">
-				
+
 			</div>
 
 		</div>
